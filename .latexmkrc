@@ -1,6 +1,6 @@
-$latex = 'uplatex %O -synctex=1 -halt-on-error -interaction=nonstopmode -file-line-error %S';
+$latex = 'platex %O -synctex=1 -halt-on-error -interaction=nonstopmode -file-line-error %S';
 $biber = 'biber --bblencoding=utf8 -u -U --output_safechars';
-$bibtex = 'upbibtex';
+$bibtex = 'pbibtex';
 $makeindex = 'upmendex %O -o %D %S';
 $dvipdf = 'dvipdfmx %O -o %D %S';
 $pdf_mode = 3;
