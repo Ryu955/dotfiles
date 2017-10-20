@@ -62,5 +62,6 @@ repo = 't9md/vim-quickhl'
 repo = 'nosami/Omnisharp'
 build = 'xbuild server/OmniSharp.sln'
 
-
+[[plugin]]
+repo = 'Ryu955/hello-vim'
 
