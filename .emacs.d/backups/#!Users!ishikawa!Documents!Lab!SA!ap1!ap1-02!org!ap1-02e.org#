@@ -1,0 +1,59 @@
+#+TITLE: 応用プログラミング1 第2回 演習
+#+AUTHOR: 井上亮文
+#+EMAIL: akifumi@stf.teu.ac.jp
+
+#+OPTIONS: LaTeX:t toc:nil author:t creator:nil ^:{} date:nil title:nil
+#+LANGUAGE: ja
+
+#+LATEX_HEADER: \USEPACKAGE{A4PRINT}
+#+LATEX_HEADER: \USEPACKAGE{FANCYHDR}
+#+LATEX_HEADER: \usepackage{fancyvrb}
+#+LATEX_HEADER: \usepackage{ascmac}
+#+LATEX_HEADER: \usepackage{udline}
+#+LATEX_HEADER: \usepackage{mylatex}
+#+LATEX_HEADER: \pagestyle{fancy}
+
+#+LATEX_HEADER: \lhead{2017年4月17日(月)}
+#+LATEX_HEADER: \chead{応用プログラミング1 第2回 演習}
+#+LATEX_HEADER: \rhead{井上亮文, 喜多義弘}
+
+#+LATEX_HEADER: \renewcommand{\labelenumi}{(\theenumi)}
+
+*【問1】*
+\pgref{pg:Triangle}は三角形をあらわすクラスである。
+\pgref{pg:Kadai01}を実行すると\pgref{pg:result01}の出力が得られた。
+Triangle, Kadai01クラスを完成させなさい。
+
+#+LaTeX: \lstinputlisting[caption=Triangle.java,label=pg:Triangle]{src/Triangle.java}
+#+LaTeX: \lstinputlisting[caption=Kadai01.java,label=pg:Kadai01]{src/Kadai01.java}
+#+LaTeX: \lstinputlisting[caption=Kadai01の出力,label=pg:result01]{src/result01.txt}
+
+\vspace{5mm}
+*【問2】*
+\pgref{pg:Student}は学生をあらわすクラスである。
+\pgref{pg:Kadai02}を実行すると\pgref{pg:result02}の出力が得られた。
+Studentクラスを完成させなさい。
+
+#+LaTeX: \lstinputlisting[caption=Student.java,label=pg:Student]{src/Student.java}
+#+LaTeX: \lstinputlisting[caption=Kadai02.java,label=pg:Kadai02]{src/Kadai02.java}
+#+LaTeX: \lstinputlisting[caption=Kadai02の出力,label=pg:result02]{src/result02.txt}
+
+\vspace{5mm}
+*【問3】*
+\pgref{pg:Cube}は立方体をあらわすクラスである。
+\pgref{pg:Kadai03}を実行すると\pgref{pg:result03}の出力が得られた。
+Cube, Kadai03を完成させなさい。
+
+#+LaTeX: \lstinputlisting[caption=Cube.java,label=pg:Cube]{src/Cube.java}
+#+LaTeX: \lstinputlisting[caption=Kadai03.java,label=pg:Kadai03]{src/Kadai03.java}
+#+LaTeX: \lstinputlisting[caption=Kadai03の出力,label=pg:result03]{src/result03.txt}
+
+\vspace{5mm}
+*【問4】*
+Kadai03のCubeクラスを用いて、以下の処理を実行するKadai04を作成しなさい。
+
+1. Cubeクラスの配列（要素数6）を作成する
+2. 配列のindexが奇数(1, 3, 5)の要素には辺の長さがindexのインスタンスを、
+   それ以外の要素には辺の長さが3〜10のインスタンスを作成する。
+3. 配列のすべての要素に対して index, 辺の長さ、体積を出力する。
+

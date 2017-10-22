@@ -1,23 +1,19 @@
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
 (require 'package)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (org-plus-contrib))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+;; option to meta
+(if window-system (progn
+    (when (equal system-type 'darwin)
+      (setq mac-option-modifier 'meta))
+))
+
+;;フォントサイズ
+(if window-system (progn
+    (when (equal system-type 'darwin) ;; Macでは16pt
+      (add-to-list 'default-frame-alist '(font . "ricty-16")))
+))
 
 ;; タイトルパーにファイルのフルパスを表示する
 (setq frame-title-format "%f")
@@ -79,3 +75,41 @@
       `((".*" ,(expand-file-name "~/.emacs.d/backups/") t)))
 
 (load-theme 'misterioso t)
+
+;; Org Mode LaTeX Export
+(require 'ox-latex)
+(require 'ox-bibtex)
+(unless (boundp 'org-latex-classes)
+  (setq org-latex-classes nil))
+
+;; pdf process = latexmk
+(setq org-latex-pdf-process '("latexmk %f"))
+;; default class = jsarticle
+;;(setq org-latex-default-class "jsarticle")
+
+;;; \hypersetup{...} を出力しない
+(setq org-latex-with-hyperref nil)
+
+(add-to-list 'org-latex-classes
+             '("thesis"
+               "\\documentclass{jarticle}
+                [NO-PACKAGES]
+                [NO-DEFAULT-PACKAGES]
+                \\usepackage[dvipdfmx]{graphicx}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (org-plus-contrib))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
