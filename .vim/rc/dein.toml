@@ -63,4 +63,9 @@ repo = 'nosami/Omnisharp'
 build = 'xbuild server/OmniSharp.sln'
 
 [[plugin]]
+<<<<<<< HEAD
 repo = 'fatih/vim-go'
+=======
+repo = 'Ryu955/hello-vim'
+
+>>>>>>> 4d67fae702501d20909231de6514c1fc4a613025
