@@ -1,0 +1,26 @@
+[user]
+	name = Ishikawa
+	email = iryu955@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[color]
+	ui = auto
+[core]
+	editor = vim
+	quotepath = false
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	st = status
+	see = browse
+	pr = pull-request
+    co = commit
+    ch = checkout
+    chb = checkout -b
+[hub]
+	protocol = https
+[init]
+	defaultBranch = main
