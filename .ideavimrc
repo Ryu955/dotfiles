@@ -1,0 +1,80 @@
+" let mapleader = ","
+let mapleader = "\"
+
+set clipboard=unnamed
+" 選択+shift-S+記号で囲う
+set surround
+
+set NERDTree
+" NERDTree
+map <leader>nn :NERDTree<CR>
+map <leader>nf :NERDTreeFind<CR>
+
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
+
+" nnoremap <C-s> :action SearchEverywhere<CR>
+nnoremap <leader>/ :action SearchEverywhere<CR>
+
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+
+nnoremap == :action ReformatCode<CR><C-A-o>
+vnoremap == :action ReformatCode<CR><C-A-o>
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gb :action JumpToLastChange<CR>
+
+nnoremap gh :action Github.Open.In.Browser<CR>
+vnoremap gh :action Github.Open.In.Browser<CR>
+
+nnoremap <C-S-s> :action FindInPath<CR>
+inoremap <C-S-s> :action FindInPath<CR>
+
+"x キー削除でデフォルトレジスタに入れない
+nnoremap x "_x
+vnoremap x "_x
+
+" vを二回で行末まで選択
+vnoremap v $h
+
+" Open tarminal
+nmap <leader>c :action ActivateTerminalToolWindow<cr>
+
+" Closing tabs
+nmap <leader>q :action CloseContent<cr>
+nmap <leader>Q :action ReopenClosedTab<cr>
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-c> <c-w>c
+
+" tabs
+nnoremap <s-h> gT
+nnoremap <s-l> gt
+nnoremap <s-c-l> :tabm +1<CR>
+nnoremap <s-c-h> :tabm -1<CR>
+
+" Full screen window
+nmap <leader>fw :action HideAllWindows<cr>
+
+" navigation
+nmap <leader>h :action Back<cr>
+nmap <leader>l :action Forward<cr>
+nmap <leader>t :action GotoTest<cr>
+nmap <leader>e :action RecentFiles<cr>
+nmap <leader>a :action RecentChangedFiles<cr>
+nmap <leader>m :action ToggleBookmark<cr>
+nmap <leader>b :action ShowBookmarks<cr>
+
+
+" Useful Git actions
+nmap <leader>gb :action Git.Branches<cr>
+nmap <leader>gp :action Git.Pull<cr>
+nmap <leader>gu :action Git.Push<cr>
+nmap <leader>gr :action Git.Rebase<cr>
+nmap <leader>gm :action Git.Merge<cr>

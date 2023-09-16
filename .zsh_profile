@@ -1,0 +1,10 @@
+export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
+export ANDROID_AVD_HOME=~/.android/avd
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# node
+export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$HOME/.anyenv/envs/nodenv/shims/npm:$PATH"
+eval "$(nodenv init -)"
+
