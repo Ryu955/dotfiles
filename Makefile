@@ -1,6 +1,6 @@
 init:
-	bin/init.sh
 	make link
+	bin/init.sh
 	make brew
 
 link:
