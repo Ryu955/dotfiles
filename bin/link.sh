@@ -18,7 +18,7 @@ for f in .??*; do
     [ "$f" = ".gitmodules" ] && continue
     [ "$f" = ".DS_Store" ] && continue
 
-    ln -snfv $DOTCONFIG_DIR/"$f" ~/
+    ln -snfv $DOTCONFIG_DIR/"$f" ~
 done
 
 cat << END
