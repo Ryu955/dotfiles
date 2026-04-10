@@ -17,7 +17,7 @@ for f in .??*; do
     [ "$f" = ".gitmodules" ] && continue
     [ "$f" = ".DS_Store" ] && continue
 
-    ln -snfv $HOME_DIR/"$f" ~
+    ln -snfv "$HOME_DIR/$f" "$HOME/$f"
 done
 
 # config/ 以下を ~/.config/ にリンク
