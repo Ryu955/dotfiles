@@ -1,6 +1,6 @@
 [user]
 	name = Ishikawa
-	email = iryu955@gmail.com
+	email = r.ishikawa@cartahd.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -24,3 +24,6 @@
 	protocol = https
 [init]
 	defaultBranch = main
+[ghq]
+    root = ~/src
+

@@ -110,4 +110,11 @@ alt - e : yabai -m window --toggle split
 alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 12:12:1:1:10:10
 
+ctrl + cmd - s : open /Applications/Slack.app
+# ctrl + cmd - c : open /Applications/Google\ Chrome.app
+ctrl + cmd - n : open /Applications/Notion.app
+ctrl + cmd - i : open /Applications/IntelliJ\ IDEA.app
+ctrl + cmd - o : open /Applications/Obsidian.app
+
+
 

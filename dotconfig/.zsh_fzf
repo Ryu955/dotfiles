@@ -1,0 +1,51 @@
+# fdg - ghq
+fdg() {
+  local selected
+  selected=$(ghq list | fzf --reverse)
+
+  if [ "x$selected" != "x" ]; then
+    cd $(ghq root)/$selected
+  fi
+}
+
+# fh - repeat history
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --reverse | sed 's/ *[0-9]* *//')
+}
+
+fzf-history-widget() {
+    local tac=${commands[tac]:-"tail -r"}
+    BUFFER=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | sed 's/ *[0-9]* *//' | eval $tac | awk '!a[$0]++' | fzf +s --tac --height 40% --reverse)
+    CURSOR=$#BUFFER
+    # zle clear-screen
+}
+zle     -N   fzf-history-widget
+bindkey '^R' fzf-history-widget
+
+# fd - cd to selected directory
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m --reverse) &&
+  cd "$dir"
+}
+
+# fkill - kill process
+fkill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m --reverse | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi
+}
+
+# fbr - checkout git branch
+fbr() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf +m --reverse --preview "git show --color=always {}") &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
