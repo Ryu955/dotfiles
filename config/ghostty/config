@@ -45,3 +45,6 @@
 background-image-opacity = 0.6
 background-opacity = 0.80
 background-blur-radius = 15
+
+# 起動時に tmux を自動実行（既存セッションにアタッチ、なければ新規作成）
+command = /bin/zsh -c "tmux attach-session -t main || tmux new-session -s main"
