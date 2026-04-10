@@ -73,7 +73,10 @@ Plug 'glidenote/memolist.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
+Plug 'wlangstroth/vim-racket'
 call plug#end()
+
+autocmd BufNewFile,BufRead *.rkt set filetype=racket
 
 colorscheme tender
 
