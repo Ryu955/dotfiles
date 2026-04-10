@@ -2,7 +2,7 @@ init:
 	make link
 	bin/init.sh
 	make brew
-	mkdir -p ~/src
+	mkdir -p ~/src/github.com
 
 link:
 	bin/link.sh
