@@ -1,5 +1,3 @@
-colorscheme tender
-
 set t_Co=256
 
 syntax enable
@@ -76,4 +74,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 call plug#end()
+
+colorscheme tender
 

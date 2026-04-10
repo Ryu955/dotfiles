@@ -2,6 +2,7 @@ init:
 	make link
 	bin/init.sh
 	make brew
+	mkdir -p ~/src
 
 link:
 	bin/link.sh
