@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+tap "qmk/qmk"
 
 brew "awscli"
 brew "composer"

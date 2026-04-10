@@ -27,6 +27,7 @@ alias la='ls -AG'
 alias ll='ls -lG'
 alias restart='exec $SHELL -l'
 alias gbdelete='git branch | xargs git branch -d'
+alias hps='gh pr view --web'
 alias nippo="gh issue list --repo Ryu955/nippo --limit 1 --json number --jq '.[0].number' | xargs -I {} gh issue view {} --repo Ryu955/nippo --web"
 gcm() {
 git checkout main 2>/dev/null || git checkout master
