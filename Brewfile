@@ -27,6 +27,7 @@ brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 brew "mutagen-io/mutagen/mutagen-compose"
 cask "aws-vault"
 cask "docker"
+cask "ghostty"
 
 vscode "bierner.markdown-mermaid"
 vscode "CoenraadS.bracket-pair-colorizer-2"
