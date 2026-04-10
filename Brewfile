@@ -23,7 +23,7 @@ brew "wget"
 brew "zplug"
 brew "zsh-completions"
 brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai", args: ["HEAD"]
+
 brew "mutagen-io/mutagen/mutagen-compose"
 cask "aws-vault"
 cask "docker"
