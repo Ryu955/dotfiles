@@ -32,6 +32,18 @@ if [ -d "$CONFIG_DIR" ]; then
     done
 fi
 
+# claude/ 以下を ~/.claude/ にリンク
+CLAUDE_DIR=$REPO_DIR/claude
+
+if [ -d "$CLAUDE_DIR" ]; then
+    echo "setup .claude dotfiles..."
+    mkdir -p ~/.claude
+    for f in "$CLAUDE_DIR"/*; do
+        name=$(basename "$f")
+        ln -snfv "$f" ~/.claude/
+    done
+fi
+
 cat << END
 
 **************************************************
