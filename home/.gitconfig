@@ -20,8 +20,6 @@
     co = commit
     ch = checkout
     chb = checkout -b
-[hub]
-	protocol = https
 [init]
 	defaultBranch = main
 [ghq]

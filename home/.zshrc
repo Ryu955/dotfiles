@@ -1,11 +1,10 @@
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-# zsh-completions(補完機能)の設定
-if [ -e /usr/local/share/zsh-completions ]; then
-    fpath=(/usr/local/share/zsh-completions $fpath)
+
+# zsh-completions
+if [ -e /opt/homebrew/share/zsh-completions ]; then
+    fpath=(/opt/homebrew/share/zsh-completions $fpath)
 fi
-autoload -U compinit
-compinit -u
 
 # History
 export HISTFILE=$HOME/.zsh_history
@@ -28,7 +27,6 @@ alias la='ls -AG'
 alias ll='ls -lG'
 alias restart='exec $SHELL -l'
 alias gbdelete='git branch | xargs git branch -d'
-alias hps='hub pr show'
 alias nippo="gh issue list --repo Ryu955/nippo --limit 1 --json number --jq '.[0].number' | xargs -I {} gh issue view {} --repo Ryu955/nippo --web"
 gcm() {
 git checkout main 2>/dev/null || git checkout master
@@ -45,7 +43,7 @@ if [ -f ~/.zsh_fzf ]; then
 fi
 
 # Git
-fpath=(~/.zsh $fpath)
+fpath=(~/.zsh ~/.zsh/completion $fpath)
 
 if [ -f ${HOME}/.zsh/git-completion.zsh ]; then
         zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.zsh
@@ -60,11 +58,10 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
-setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+setopt PROMPT_SUBST
 
-eval "$(anyenv init -)"
-
-fpath=(~/.zsh/completion $fpath)
+# mise
+eval "$(mise activate zsh)"
 
 autoload -Uz compinit
 compinit -u
