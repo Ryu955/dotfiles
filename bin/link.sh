@@ -40,7 +40,14 @@ if [ -d "$CLAUDE_DIR" ]; then
     mkdir -p ~/.claude
     for f in "$CLAUDE_DIR"/*; do
         name=$(basename "$f")
-        ln -snfv "$f" ~/.claude/
+        if [ -d "$f" ]; then
+            mkdir -p ~/.claude/"$name"
+            for ff in "$f"/*; do
+                ln -snfv "$ff" ~/.claude/"$name"/
+            done
+        else
+            ln -snfv "$f" ~/.claude/
+        fi
     done
 fi
 
